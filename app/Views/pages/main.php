@@ -19,39 +19,41 @@
 <body>
     <!-- navbar -->
     <nav class="navbar">
-        <div class="container nav_container">
-            <div class="nav_img_left">
-                <img src="/img/logo.png" alt="" style="width: 90px;">
-            </div>
-            <div class="navbar-header">
-                <span class="material-symbols-outlined" id="toggle_btn_nav">menu</span>
-            </div>
-            <div class="nav_img_right">
-                <img src="/img/logo.png" alt="" style="width: 90px;">
-            </div>
-            <div class="navbar_login">
-                <div class="navbar_link">
-                    <ul>
-                        <li><a href="#">Beranda</a></li>
-                        <li><a href="#">Produk</a></li>
-                        <li><a href="#">Tentang</a></li>
-                        <li><a href="#">Toko</a></li>
-                    </ul>
+        <div class="transparent-nav">
+            <div class="container nav_container">
+                <div class="nav_img_left">
+                    <img src="/img/logo.png" alt="" style="width: 90px;">
                 </div>
-                <div class="navbar_link_icon">
-                    <ul>
-                        <li><span class="material-symbols-outlined">account_circle</span></li>
-                        <li class="vl"><a href="#"> Login</a></li>
-                        <li><span class="material-symbols-outlined">login</span></li>
-                        <li><a href="#">Sign Up</a></li>
-                        <li><span class="material-symbols-outlined">local_mall</span></li>
-                    </ul>
+                <div class="navbar-header">
+                    <span class="material-symbols-outlined" id="toggle_btn_nav">menu</span>
+                </div>
+                <div class="nav_img_right">
+                    <img src="/img/logo.png" alt="" style="width: 90px;">
+                </div>
+                <div class="navbar_login">
+                    <div class="navbar_link">
+                        <ul>
+                            <li><a href="/">Beranda</a></li>
+                            <li><a href="/produk">Produk</a></li>
+                            <li><a href="/tentang">Tentang</a></li>
+                            <li><a href="toko">Toko</a></li>
+                        </ul>
+                    </div>
+                    <div class="navbar_link_icon">
+                        <ul>
+                            <li><span class="material-symbols-outlined">account_circle</span></li>
+                            <li class="vl"><a href="/loginUser"> Login</a></li>
+                            <li><span class="material-symbols-outlined">login</span></li>
+                            <li><a href="signUpUser">Sign Up</a></li>
+                            <li><span class="material-symbols-outlined">local_mall</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
 
-    <div class="container dropdown_nav" id="myNavbar">
+    <div class="container-xxl dropdown_nav" id="myNavbar">
         <div class="navbar_link_dropdown">
             <ul>
                 <li><a href="#">Beranda</a></li>
@@ -62,11 +64,11 @@
         </div>
         <div class="navbar_login_dropdown">
             <ul class="nav navbar-nav-dropdown">
-                <div class="dropdown_wrap">
+                <div class="nav_dropdown_wrap">
                     <li><span class="material-symbols-outlined geser">account_circle</span></li>
                     <li><a href="#"> Sign Up</a></li>
                 </div>
-                <div class="dropdown_wrap">
+                <div class="nav_dropdown_wrap">
                     <li><span class="material-symbols-outlined">logout</span></li>
                     <li><a href="#">Login</a></li>
                 </div>
@@ -74,43 +76,60 @@
         </div>
     </div>
 
+    <div class="sidebar">
+
+    </div>
     <script>
         $(document).ready(function() {
             $("#toggle_btn_nav").click(function() {
                 $(".dropdown_nav").toggleClass("dropdown_nav_active");
             });
-        }); 
+        });
     </script>
     <!-- end of navbar -->
 
     <!-- footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
+    <!-- <footer class="footer"> -->
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="sub_footer_section">
                     <h3>Griya Bakpia</h3>
-                    <p>Griya Bakpia - Nomor Telepon</p>
                 </div>
-                <div class="footer-section">
+                <div class="sub_footer_section">
+                    <p><span class="material-symbols-outlined">call</span> - 08123123123123</p>
+                    <p><span class="material-symbols-outlined">mail</span> - example@gmail.com</p>
+                    <p><span class="material-symbols-outlined">location_on</span> - Yogyakarta</p>
+                </div>
+            </div>
+            <div class="footer-section">
+                <div class="sub_footer_section">
                     <h3>Link Cepat</h3>
-                    <ul>
+                </div>
+                <div class="sub_footer_section">
+                    <ul"\>
                         <li><a href="#">Tentang Kami</a></li>
                         <li><a href="#">Kebijakan Privasi</a></li>
                         <li><a href="#">Syarat & Ketentuan</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
+            </div>
+            <div class="footer-section-sosmed">
+                <div class="sub_footer_section_sosmed">
                     <h3>Ikuti Kami</h3>
+                </div>
+                <div class="sub_footer_section_sosmed">
                     <a href="#">Facebook</a> |
                     <a href="#">Twitter</a> |
                     <a href="#">Instagram</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                &copy; 2024 Griya Bakpia | Designed by team
-            </div>
         </div>
-    </footer>
+        <div class="footer-bottom">
+            &copy; 2024 Griya Bakpia | Designed by team
+        </div>
+    </div>
+    <!-- </footer> -->
     <!-- end of footer -->
 
 
