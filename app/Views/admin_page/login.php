@@ -15,18 +15,17 @@
         <div class="sub_card">
             <header>Login</header>
             <p>You need login to access the admin data</p>
-            <form action="">
+            <form action="" method="">
                 <div class="field_input">
-                    <label for="">Username/Email</label>
-                    <input type="text" name="username" id="" required />
+                    <label for="email">Username/Email</label>
+                    <input type="email" name="email" id="username" required />
                 </div>
                 <div class="field_input">
-                    <label for="">Password</label>
-                    <input type="password" name="password" id="" required />
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required />
                 </div>
                 <div class="btn_input">
-                    <button>login</button>
-                    <!-- <input type="submit" class="btn" name="submit" value="Login" required /> -->
+                    <input type="submit" class="btn" name="submit" value="Login" required />
                 </div>
             </form>
         </div>

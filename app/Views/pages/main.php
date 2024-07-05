@@ -1,138 +1,249 @@
-<!DOCTYPE html>
-<html lang="en">
+<?= $this->extend('layouts/template'); ?>
 
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/reset.css">
-    <!-- icon -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <!-- navbar -->
-    <nav class="navbar">
-        <div class="transparent-nav">
-            <div class="container nav_container">
-                <div class="nav_img_left">
-                    <img src="/img/logo.png" alt="" style="width: 90px;">
+<?= $this->section('content'); ?>
+<link rel="stylesheet" href="/css/main.css">
+<!-- hero -->
+<div class="hero">
+    <img src="/img/hero.svg" alt="">
+    <div class="container">
+        <div class="transparent_hero"></div>
+        <div class="sub_hero">
+            <div class="wrapper_hero">
+                <div class="title_hero">
+                    <h2>Lezatnya Terasa di Setiap Lapisan</h2>
                 </div>
-                <div class="navbar-header">
-                    <span class="material-symbols-outlined" id="toggle_btn_nav">menu</span>
-                </div>
-                <div class="nav_img_right">
-                    <img src="/img/logo.png" alt="" style="width: 90px;">
-                </div>
-                <div class="navbar_login">
-                    <div class="navbar_link">
-                        <ul>
-                            <li><a href="/">Beranda</a></li>
-                            <li><a href="/produk">Produk</a></li>
-                            <li><a href="/tentang">Tentang</a></li>
-                            <li><a href="toko">Toko</a></li>
-                        </ul>
-                    </div>
-                    <div class="navbar_link_icon">
-                        <ul>
-                            <li><span class="material-symbols-outlined">account_circle</span></li>
-                            <li class="vl"><a href="/loginUser"> Login</a></li>
-                            <li><span class="material-symbols-outlined">login</span></li>
-                            <li><a href="signUpUser">Sign Up</a></li>
-                            <li><span class="material-symbols-outlined">local_mall</span></li>
-                        </ul>
-                    </div>
+                <div class="desc_hero">
+                    <p>Bakpia kami terbuat dari bahan berkualitas terbaik. Dengan isian yang lembut dan kulit yang renyah, setiap bakpia menawarkan pengalaman rasa yang akan membuat Anda jatuh cinta pada gigitan pertama.</p>
                 </div>
             </div>
         </div>
-    </nav>
+    </div>
+</div>
+<!-- <div class="curve_hero"><h2>Signature Taste</h2></div> -->
+<!-- end hero -->
 
-    <div class="container-xxl dropdown_nav" id="myNavbar">
-        <div class="navbar_link_dropdown">
-            <ul>
-                <li><a href="#">Beranda</a></li>
-                <li><a href="#">Produk</a></li>
-                <li><a href="#">Tentang</a></li>
-                <li><a href="#">Toko</a></li>
-            </ul>
-        </div>
-        <div class="navbar_login_dropdown">
-            <ul class="nav navbar-nav-dropdown">
-                <div class="nav_dropdown_wrap">
-                    <li><span class="material-symbols-outlined geser">account_circle</span></li>
-                    <li><a href="#"> Sign Up</a></li>
-                </div>
-                <div class="nav_dropdown_wrap">
-                    <li><span class="material-symbols-outlined">logout</span></li>
-                    <li><a href="#">Login</a></li>
-                </div>
-            </ul>
+<!-- category -->
+<div class="container category">
+    <div class="category_card1">
+        <img src="/img/pitek.jpg" alt="" style="height: auto" ;>
+        <div class="text_category">
+            <h4><b>Griya Bakpia Premium</b></h4>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis nobis repellendus reiciendis deleniti nostrum blanditiis facere beatae harum ipsa quam nesciunt quis eum quo, maiores provident dignissimos aliquam, aliquid sapiente.
+                Qui repellat nisi unde repudiandae quae ea est exercitationem perferendis ipsam voluptate iste, ullam quasi! Sequi dolores eius dolorum repellendus, commodi, sed minima omnis, architecto exercitationem corporis porro accusamus possimus?
+                Omnis nisi itaque quisquam delectus, deleniti veniam, iusto expedita ullam tempora a dolorum iste! Ducimus omnis fugiat qui sit id atque commodi, doloremque blanditiis quam ad odit ex, nulla eveniet!
+                Minus dolores mollitia veritatis quia, iusto saepe cum autem adipisci itaque numquam fuga eligendi molestiae. Velit ea ut, assumenda nam illum tempora! Similique dicta molestias aut fugiat sequi, suscipit eum?
+                Delectus iste quisquam accusantium unde ex exercitationem quia repellendus fuga consequatur? Asperiores iure odio tenetur! Architecto modi sunt harum! Est iste ipsa facere nostrum reprehenderit quidem temporibus. Laborum, ratione suscipit!</p>
         </div>
     </div>
-
-    <div class="sidebar">
-
+    <div class="category_card2">
+        <div class="text_category">
+            <h4><b>Bakpia 465</b></h4>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis nobis repellendus reiciendis deleniti nostrum blanditiis facere beatae harum ipsa quam nesciunt quis eum quo, maiores provident dignissimos aliquam, aliquid sapiente.
+                Qui repellat nisi unde repudiandae quae ea est exercitationem perferendis ipsam voluptate iste, ullam quasi! Sequi dolores eius dolorum repellendus, commodi, sed minima omnis, architecto exercitationem corporis porro accusamus possimus?
+                Omnis nisi itaque quisquam delectus, deleniti veniam, iusto expedita ullam tempora a dolorum iste! Ducimus omnis fugiat qui sit id atque commodi, doloremque blanditiis quam ad odit ex, nulla eveniet!
+                Minus dolores mollitia veritatis quia, iusto saepe cum autem adipisci itaque numquam fuga eligendi molestiae. Velit ea ut, assumenda nam illum tempora! Similique dicta molestias aut fugiat sequi, suscipit eum?
+                Delectus iste quisquam accusantium unde ex exercitationem quia repellendus fuga consequatur? Asperiores iure odio tenetur! Architecto modi sunt harum! Est iste ipsa facere nostrum reprehenderit quidem temporibus. Laborum, ratione suscipit!</p>
+        </div>
+        <img src="/img/pitek.jpg" alt="" style="height: auto" ;>
     </div>
-    <script>
-        $(document).ready(function() {
-            $("#toggle_btn_nav").click(function() {
-                $(".dropdown_nav").toggleClass("dropdown_nav_active");
-            });
-        });
-    </script>
-    <!-- end of navbar -->
+</div>
+<!-- end of category -->
 
-    <!-- footer -->
-    <!-- <footer class="footer"> -->
-    <div class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <div class="sub_footer_section">
-                    <h3>Griya Bakpia</h3>
-                </div>
-                <div class="sub_footer_section">
-                    <p><span class="material-symbols-outlined">call</span> - 08123123123123</p>
-                    <p><span class="material-symbols-outlined">mail</span> - example@gmail.com</p>
-                    <p><span class="material-symbols-outlined">location_on</span> - Yogyakarta</p>
-                </div>
-            </div>
-            <div class="footer-section">
-                <div class="sub_footer_section">
-                    <h3>Link Cepat</h3>
-                </div>
-                <div class="sub_footer_section">
-                    <ul"\>
-                        <li><a href="#">Tentang Kami</a></li>
-                        <li><a href="#">Kebijakan Privasi</a></li>
-                        <li><a href="#">Syarat & Ketentuan</a></li>
+<!-- slider -->
+<div class="btn_slider">
+    <button class="btn_bakpia griya_bakpia">Griya Bakpia</button>
+    <button class="btn_bakpia bakpia_465">Bakpia 465</button>
+    <button class="btn_bakpia 465_kering">Bakpia 465 Kering</button>
+</div>
+<div class="container">
+    <div class="slideShow_product" id="griya">
+        <div class="slider-wrapper">
+            <button id="prev-slide" class="slide-button btn_left">
+                < </button>
+                    <ul class="image-list">
+                        <?php foreach ($data_get['result'] as $value) {  ?>
+                            <div class="image-item">
+                                <img src="/img/logo.png" alt="img-1" />
+                                <h3><?= $value['product']; ?></h3>
+                            </div>
+                        <?php } ?>
                     </ul>
-                </div>
-            </div>
-            <div class="footer-section-sosmed">
-                <div class="sub_footer_section_sosmed">
-                    <h3>Ikuti Kami</h3>
-                </div>
-                <div class="sub_footer_section_sosmed">
-                    <a href="#">Facebook</a> |
-                    <a href="#">Twitter</a> |
-                    <a href="#">Instagram</a>
-                </div>
-            </div>
+                    <button id="next-slide" class="slide-button btn_right">
+                        >
+                    </button>
         </div>
-        <div class="footer-bottom">
-            &copy; 2024 Griya Bakpia | Designed by team
+        <div class="slider-scrollbar">
+            <div class="scrollbar-track">
+                <div class="scrollbar-thumb"></div>
+            </div>
         </div>
     </div>
-    <!-- </footer> -->
-    <!-- end of footer -->
 
 
-</body>
+    <div class="slideShow_product" id="basah465">
+        <div class="slider-wrapper">
+            <button id="prev-slide" class="slide-button btn_left">
+                < </button>
+                    <ul class="image-list">
+                        <div class="image-item">
+                            <img src="/img/logo.png" alt="img-1" />
+                            <h3>465</h3>
+                        </div>
+                        <div class="image-item">
+                            <img src="/img/logo.png" alt="img-1" />
+                            <h3>asdfasdfasd</h3>
+                        </div>
+                        <div class="image-item">
+                            <img src="/img/logo.png" alt="img-1" />
+                            <h3>asdfasdfasd</h3>
+                        </div>
+                        <div class="image-item">
+                            <img src="/img/logo.png" alt="img-1" />
+                            <h3>asdfasdfasd</h3>
+                        </div>
+                        <div class="image-item">
+                            <img src="/img/logo.png" alt="img-1" />
+                            <h3>asdfasdfasd</h3>
+                        </div>
+                        <div class="image-item">
+                            <img src="/img/logo.png" alt="img-1" />
+                            <h3>asdfasdfasd</h3>
+                        </div>
+                        <div class="image-item">
+                            <img src="/img/logo.png" alt="img-1" />
+                            <h3>asdfasdfasd</h3>
+                        </div>
+                        <div class="image-item">
+                            <img src="/img/logo.png" alt="img-1" />
+                            <h3>asdfasdfasd</h3>
+                        </div>
+                        <div class="image-item">
+                            <img src="/img/logo.png" alt="img-1" />
+                            <h3>asdfasdfasd</h3>
+                        </div>
+                        <div class="image-item">
+                            <img src="/img/logo.png" alt="img-1" />
+                            <h3>asdfasdfasd</h3>
+                        </div>
+                    </ul>
+                    <button id="next-slide" class="slide-button btn_right">
+                        >
+                    </button>
+        </div>
+        <div class="slider-scrollbar">
+            <div class="scrollbar-track">
+                <div class="scrollbar-thumb"></div>
+            </div>
+        </div>
+    </div>
 
-</html>
+    <div class="slideShow_product" id="kering465">
+        <div class="slider-wrapper">
+            <button id="prev-slide" class="slide-button btn_left">
+                < </button>
+                    <ul class="image-list">
+                        <div class="image-item">
+                            <img src="/img/logo.png" alt="img-1" />
+                            <h3>kering</h3>
+                        </div>
+                        <div class="image-item">
+                            <img src="/img/logo.png" alt="img-1" />
+                            <h3>asdfasdfasd</h3>
+                        </div>
+                        <div class="image-item">
+                            <img src="/img/logo.png" alt="img-1" />
+                            <h3>asdfasdfasd</h3>
+                        </div>
+                        <div class="image-item">
+                            <img src="/img/logo.png" alt="img-1" />
+                            <h3>asdfasdfasd</h3>
+                        </div>
+                        <div class="image-item">
+                            <img src="/img/logo.png" alt="img-1" />
+                            <h3>asdfasdfasd</h3>
+                        </div>
+                        <div class="image-item">
+                            <img src="/img/logo.png" alt="img-1" />
+                            <h3>asdfasdfasd</h3>
+                        </div>
+                        <div class="image-item">
+                            <img src="/img/logo.png" alt="img-1" />
+                            <h3>asdfasdfasd</h3>
+                        </div>
+                        <div class="image-item">
+                            <img src="/img/logo.png" alt="img-1" />
+                            <h3>asdfasdfasd</h3>
+                        </div>
+                        <div class="image-item">
+                            <img src="/img/logo.png" alt="img-1" />
+                            <h3>asdfasdfasd</h3>
+                        </div>
+                        <div class="image-item">
+                            <img src="/img/logo.png" alt="img-1" />
+                            <h3>asdfasdfasd</h3>
+                        </div>
+                    </ul>
+                    <button id="next-slide" class="slide-button btn_right">
+                        >
+                    </button>
+        </div>
+        <div class="slider-scrollbar">
+            <div class="scrollbar-track">
+                <div class="scrollbar-thumb"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $(".btn_bakpia").click(function() {
+            $(".btn_bakpia").removeClass("btn_bakpia_active");
+            $(this).addClass("btn_bakpia_active");
+        })
+    })
+
+    $(document).ready(function() {
+        $(".griya_bakpia").click(function() {
+            $("#griya").css({
+                "display": "block"
+            })
+            $("#basah465").css({
+                "display": "none"
+            })
+            $("#kering465").css({
+                "display": "none"
+            })
+        })
+    })
+
+    $(document).ready(function() {
+        $(".bakpia_465").click(function() {
+            $("#basah465").css({
+                "display": "block"
+            })
+            $("#griya").css({
+                "display": "none"
+            })
+            $("#kering465").css({
+                "display": "none"
+            })
+        })
+    })
+
+    $(document).ready(function() {
+        $(".465_kering").click(function() {
+            $("#kering465").css({
+                "display": "block"
+            })
+            $("#basah465").css({
+                "display": "none"
+            })
+            $("#griya").css({
+                "display": "none"
+            })
+        })
+    })
+</script>
+
+<?= $this->endSection(); ?>
