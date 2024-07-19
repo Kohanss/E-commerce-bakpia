@@ -10,15 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
     <title>login</title>
 </head>
+
 <body>
     <div class="container">
         <div class="sub_card">
             <header>Login</header>
             <p>You need login to access the admin data</p>
-            <form action="" method="">
+            <form action="<?php echo base_url('login'); ?>" method="post">
                 <div class="field_input">
-                    <label for="email">Username/Email</label>
-                    <input type="email" name="email" id="username" required />
+                    <label for="username">Username/Email</label>
+                    <input type="username" name="username" id="username" required />
                 </div>
                 <div class="field_input">
                     <label for="password">Password</label>

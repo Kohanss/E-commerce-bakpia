@@ -6,12 +6,12 @@ class Pages extends BaseController
 {
     public function index()
     {
-        $curl['url'] = ['https://pitekapi.000webhostapp.com/'];
+        $curl['url'] = ['http://10.10.0.53/crud-structured/public/'];
         $curl['endpoint'] = ['listpublic/listproduct'];
         $curl['method'] = ['GET'];
         $curl['return_transfer'] = true;
-        $curl['max_redirect'] = [10];
-        $curl['timeout'] = [0];
+        $curl['max_redirect'] = 10;
+        $curl['timeout'] = 0;
         $curl['follow_location'] = true;
         $curl['http_header'] = ['ceritane token'];
         $curl['pagination'] = ['false'];
@@ -31,7 +31,7 @@ class Pages extends BaseController
 
     // public function produk()
     // {
-    //     $curl['url'] = ['https://pitekapi.000webhostapp.com'];        
+    //     $curl['url'] = ['http://10.10.0.53/crud-structured/public/'];        
     //     $curl['endpoint'] = ['listpublic/listproduct'];
     //     $curl['method'] = ['GET'];
     //     $curl['pagination'] = ['false'];
@@ -59,6 +59,7 @@ class Pages extends BaseController
         ];
         return view('pages/tentang', $data);
     }
+
     public function toko()
     {
         $data = [
@@ -66,62 +67,20 @@ class Pages extends BaseController
         ];
         return view('pages/toko', $data);
     }
-    public function loginUser()
-    {
-        return view('pages/login');
-    }
-    public function signUpUser()
-    {
-        return view('pages/signup');
-    }
 
-
-    // public function pagination()
+    // public function loginUser()
     // {
-    //     $pagi = $this->request->getGet();
-    //     $pagi = $pagi['page'];
-    //     // print_r($pagi);
-    //     // die;
-    //     // $keyword = $_POST['keyword'];
-    //     // print_r($keyword);
-    //     // die;
-    //     $curl['url'] = ['https://pitekapi.000webhostapp.com'];        
-    //     $curl['endpoint'] = ['listpublic/listproduct'];
-    //     $curl['method'] = ['GET'];
-    //     $curl['params'] = [
-    //         'page' => $pagi,
-    //     ];
-    //     $curl['pagination'] = ['true'];
-    //     $curl['max_redirect'] = [10];
-    //     $curl['timeout'] = [1];
-    //     $curl['follow_location'] = true;
-    //     $curl['return_transfer'] = true;
-    //     // $curl['http_header'] = [
-    //     //     'Token' => 'dmlub0BnbWFpbC5jb20xMjM0NTY=',
-    //     // ]; 
-    //     $data = curlSetOptGet($curl);
-    //     $data = json_decode($data, true);
-    //     // print_r($data);
-    //     // die;
-    //     return view(
-    //         'pages/produk',
-    //         [
-    //             'title' => 'Griya Bakpia | Produk',
-    //             'data_page' => $pagi
-    //             // 'data_get' => $data
-    //         ]
-
-    //     );
+    //     return view('pages/login');
     // }
 
     public function produk()
     {
-        $curl['url'] = ['https://pitekapi.000webhostapp.com'];
+        $curl['url'] = ['http://10.10.0.53/crud-structured/public/'];
         $curl['endpoint'] = ['listpublic/listproduct'];
         $curl['method'] = ['GET'];
         $curl['pagination'] = ['false'];
-        $curl['max_redirect'] = [10];
-        $curl['timeout'] = [1];
+        $curl['max_redirect'] = 10;
+        $curl['timeout'] = 1;
         $curl['follow_location'] = true;
         $curl['return_transfer'] = true;
         $data = curlSetOptGet($curl);
@@ -132,15 +91,15 @@ class Pages extends BaseController
 
         if (!empty($pagi['page'])) {
             $pagi = $pagi['page'];
-            $curl_pagi['url'] = ['https://pitekapi.000webhostapp.com'];
+            $curl_pagi['url'] = ['http://10.10.0.53/crud-structured/public/'];
             $curl_pagi['endpoint'] = ['listpublic/listproduct'];
             $curl_pagi['method'] = ['GET'];
             $curl_pagi['params'] = [
                 'page' => $pagi,
             ];
             $curl_pagi['pagination'] = ['true'];
-            $curl_pagi['max_redirect'] = [10];
-            $curl_pagi['timeout'] = [1];
+            $curl_pagi['max_redirect'] = 10;
+            $curl_pagi['timeout'] = 1;
             $curl_pagi['follow_location'] = true;
             $curl_pagi['return_transfer'] = true;
             // $curl_pagi['http_header'] = [
@@ -151,59 +110,154 @@ class Pages extends BaseController
         } else {
             $data_pagi = [];
         }
-        // print_r($data_pagi);
-        // die;
-        return view(
-            'pages/produk',
-            [
-                'title' => 'Griya Bakpia | Produk',
-                'data_get' => $data,
-                'data_page' => $data_pagi
+        $default = [
+            "status" => 200,
+            "message" => "List Product",
+            "error" => "",
+            "result" => [
+                [
+                    "id" => "279",
+                    "product" => "Mie Aceh",
+                    "category" => "Makanan",
+                    "unit" => "Piring",
+                    "price_sell" => "350",
+                    "stock" => "56"
+                ],
+                [
+                    "id" => "280",
+                    "product" => "Ayam Geprek",
+                    "category" => "Makanan",
+                    "unit" => "Piring",
+                    "price_sell" => "700",
+                    "stock" => "258"
+                ],
+                [
+                    "id" => "282",
+                    "product" => "Ayam Goreng",
+                    "category" => "Makanan",
+                    "unit" => "Piring",
+                    "price_sell" => "700",
+                    "stock" => "98"
+                ],
+                [
+                    "id" => "283",
+                    "product" => "Mie Rendang",
+                    "category" => "Makanan",
+                    "unit" => "Piring",
+                    "price_sell" => "300",
+                    "stock" => "498"
+                ],
+                [
+                    "id" => "284",
+                    "product" => "Mie Soto",
+                    "category" => "Makanan",
+                    "unit" => "Piring",
+                    "price_sell" => "300",
+                    "stock" => "498"
+                ],
+                [
+                    "id" => "285",
+                    "product" => "Ayam Rendang",
+                    "category" => "Makanan",
+                    "unit" => "Piring",
+                    "price_sell" => "1000",
+                    "stock" => "999"
+                ],
+                [
+                    "id" => "289",
+                    "product" => "Es Teh",
+                    "category" => "Minuman",
+                    "unit" => "Gelas",
+                    "price_sell" => "800",
+                    "stock" => "100"
+                ],
+                [
+                    "id" => "290",
+                    "product" => "Es Jeruk",
+                    "category" => "Minuman",
+                    "unit" => "Gelas",
+                    "price_sell" => "800",
+                    "stock" => "100"
+                ],
+                [
+                    "id" => "291",
+                    "product" => "Teh anget",
+                    "category" => "Minuman",
+                    "unit" => "Gelas",
+                    "price_sell" => "800",
+                    "stock" => "100"
+                ],
+                [
+                    "id" => "292",
+                    "product" => "Kelapa",
+                    "category" => "Minuman",
+                    "unit" => "Gelas",
+                    "price_sell" => "800",
+                    "stock" => "100"
+                ]
             ]
+        ];
 
-        );
-    }
+        $default_pagination = [
+            "status" => 200,
+            "message" => "List Product",
+            "error" => "",
+            "result" => [
+                "data" => [
+                    [
+                        "id" => "291",
+                        "product" => "Teh anget",
+                        "category" => "Minuman",
+                        "unit" => "Gelas",
+                        "price_sell" => "800",
+                        "stock" => "100"
+                    ],
+                    [
+                        "id" => "292",
+                        "product" => "Kelapa",
+                        "category" => "Minuman",
+                        "unit" => "Gelas",
+                        "price_sell" => "800",
+                        "stock" => "100"
+                    ]
+                ],
+                "pagination" => [
+                    "jumlah_data" => 10,
+                    "jumlah_page" => 5,
+                    "prev" => null,
+                    "page" => "1",
+                    "next" => "2",
+                    "detail" => [
+                        1,
+                        2,
+                        3
+                    ],
+                    "start" => 1,
+                    "end" => 2
+                ]
+            ]
+        ];
 
-    public function search()
-    {
+        if (empty($data && $data_pagi)) {
+            return view(
+                'pages/produk',
+                [
+                    'title' => 'Griya Bakpia | Produk',
+                    'data_page' => $default_pagination,
+                    'data_get' => $data
+                ]
 
-        $keyword = $_POST['keyword'];
-        // print_r($keyword);
-        // die;
-        $curl['url'] = ['https://pitekapi.000webhostapp.com'];
-        $curl['endpoint'] = ['listpublic/listproduct'];
-        $curl['params'] = ['search' => $keyword];
-        $curl['method'] = ['GET'];
-        $curl['pagination'] = ['false'];
-        $curl['max_redirect'] = [10];
-        $curl['timeout'] = [1];
-        $curl['follow_location'] = true;
-        $curl['return_transfer'] = true;
-        $data = curlSetOptGet($curl);
-        // $data = json_decode($data, true);
-        print_r($data);     
-        die;
-        $card = '
-        <div class="card_produk">
-            <div class="card">
-                <img src="/img/pitek.jpg" alt="" />
-                <div class="card_text">
-                    <p>' . $data . '</p>
-                </div>
-            </div>
-        </div>
-        ';
-        print_r($card);
-        die;
+            );
+        } else {
+            return view(
+                'pages/produk',
+                [
+                    'title' => 'Griya Bakpia | Produk',
+                    'data_page' => $data_pagi,
+                    'data_get' => $data
+                ]
 
-        // return view(
-        //     'pages/produk',
-        //     [
-        //         'title' => 'Griya Bakpia | Produk',
-        //         'data_get' => $data
-        //     ]
-
-        // );
-
+            );
+        }
     }
 }

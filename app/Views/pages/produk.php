@@ -73,6 +73,19 @@
 </div>
 
 <!-- pagination -->
+<div class="container pagination">
+    <?php if (!empty($data_page['result']['pagination']['prev'])) {
+        $num = $data_page['result']['pagination']['prev']; ?>
+        <a href="/pages/produk?page=<?= $num; ?>">&laquo;</a>
+    <?php }  ?>
+    <?php for ($i = 1; $i <= $data_page['result']['pagination']['jumlah_page']; $i++) { ?>
+        <a class="paginat" href="/pages/produk?page=<?= $i; ?>"><?php echo $i ?></a>
+    <?php } ?>
+    <?php if (!empty($data_page['result']['pagination']['next'])) {
+        $num = $data_page['result']['pagination']['next']; ?>
+        <a href="/pages/produk?page=<?= $num; ?>">&raquo;</a>
+    <?php }  ?>
+</div>
 
 
 
@@ -120,67 +133,37 @@
     // })
 
 
+
+    // function search() {
+    //     var keyword = $('#search_input').val();
+    //     if (keyword.length >= 3) {
+    //         $.ajax({
+    //             url: "<?php //echo base_url('pages/search'); 
+                            ?>",
+    //             type: "POST",
+    //             data: {
+    //                 keyword: keyword
+    //             },
+    //             success: function(data) {
+    //                 $("#search_results").html(data);
+    //             },
+    //         });
+    //     } else {
+    //         $("#search_results").html("");
+    //     }
+    // }
+
     // $(document).ready(function() {
-    //     function search() {
-    //         var keyword = $(this).val();
-    //         if (keyword.length >= 3) {
-    //             $.ajax({
-    //                 url: "<?php //echo base_url('pages/search'); 
-                                ?>",
-    //                 type: "POST",
-    //                 data: {
-    //                     keyword: keyword
-    //                 },
-    //                 success: function(data) {
-    //                     $("#search_results").html(data);
-    //                 },
-    //             });
-    //         } else {
-    //             $("#search_results").html("");
-    //         }
-    //     }
-    // });
-
-
-    // $("#search_btn").on("click", function() {
-    //     search();
-    // });
-
-    // $('#search_input').on('keyup', function(e) {
-    //     if (e.keyCode === 13) {
+    //     $("#search_btn").on("click", function() {
     //         search();
-    //     }
+    //     });
+
+    //     $('#search_input').on('keyup', function(e) {
+    //         if (e.keyCode === 13) {
+    //             search();
+    //         }
+    //     });
     // });
-
-    function search() {
-        var keyword = $('#search_input').val();
-        if (keyword.length >= 3) {
-            $.ajax({
-                url: "<?php echo base_url('pages/search'); ?>",
-                type: "POST",
-                data: {
-                    keyword: keyword
-                },
-                success: function(data) {
-                    $("#search_results").html(data);
-                },
-            });
-        } else {
-            $("#search_results").html("");
-        }
-    }
-
-    $(document).ready(function() {
-        $("#search_btn").on("click", function() {
-            search();
-        });
-
-        $('#search_input').on('keyup', function(e) {
-            if (e.keyCode === 13) {
-                search();
-            }
-        });
-    });
 
 </script>
 
