@@ -4,8 +4,11 @@
 <?= $this->section('content_admin'); ?>
 <!-- table -->
 
-<div class="content" style="margin: 56px 0px 0px 250px;">
-    <div class="container">
+<div class="content">
+    <div class="" style="margin: 70px 20px 0px 10px;">
+        <form action="">
+            <a href="/admin/produk/add-data" style="padding: 3px 10px;" class="btn btn-primary" type="button">Add Data</a>
+        </form>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered">
@@ -30,8 +33,8 @@
                                 <td><?php echo $value['price']; ?></td>
                                 <td>
                                     <span class="action-btn">
-                                        <a href="/admin/produk/edit-form?id=<?php echo $value['id']; ?>" style="padding: 3px 10px;" class="btn btn-primary" type="button">Edit</a>
-                                        <a href="" class="btn btn-danger" style="padding: 3px 10px;" type="button">Hapus</a>
+                                        <a href="/admin/product/update?id=<?php echo $value['id']; ?>" style="padding: 3px 10px;" class="btn btn-primary" type="button">Edit</a>
+                                        <a href="/admin/product/delete?id=<?php echo $value['id']; ?>" class="btn btn-danger" style="padding: 3px 10px;" type="button">Hapus</a>
                                     </span>
                                 </td>
                             </tr>

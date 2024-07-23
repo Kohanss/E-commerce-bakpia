@@ -13,7 +13,6 @@
         <div class="">
             <button type="button" class="float-end btn btn-danger m-1 "><a href="/admin" class="text-light pt-1" style="text-decoration: none;">&#128473;</a></button>
         </div>
-
         <div class="row">
             <div class="col-md-12">
                 <h2 class="text-center">Tambah Produk</h2>
@@ -23,32 +22,33 @@
                         <input type="text" class="form-control" id="namaProduk" name="namaProduk" value="" required>
                     </div>
                     <div class="mb-3">
-                        <label for="kategori" class="form-label">Kategori</label>
-                        <select class="form-select" id="kategori" name="kategori" aria-label="Default select example">
-                            <option value="">Hewan</option>
-                            <option value="">Sayuran</option>
-                        </select>
-                    </div>
+                            <label for="category" class="form-label">Kategori</label>
+                            <select class="form-select" id="category" name="category" aria-label="Default select example">
+                                <?php foreach ($category['result'] as $category) {  ?>
+                                    <option value="<?php echo $category['id']; ?>"><?php echo $category['category']; ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="type" class="form-label">Tipe</label>
+                            <select class="form-select" id="type" name="type" aria-label="Default select example">
+                                <?php foreach ($type['result'] as $type) {  ?>
+                                    <option value="<?php echo $type['id']; ?>"><?php echo $type['type']; ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="value" class="form-label">Box</label>
+                            <select class="form-select" id="value" name="value" aria-label="Default select example">
+                                <?php foreach ($value['result'] as $value) {  ?>
+                                    <option value="<?php echo $value['id']; ?>"><?php echo $value['value']; ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
                     <div class="mb-3">
-                        <label for="kategori" class="form-label">unit</label>
-                        <select class="form-select" id="kategori" name="kategori" aria-label="Default select example">
-                            <option value="">Hewan</option>
-                            <option value="">Sayuran</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="harga" class="form-label">Harga Beli</label>
+                        <label for="harga" class="form-label">Harga</label>
                         <input type="number" class="form-control" id="harga" name="harga" autocomplete="off" placeholder="1.000.000" required>
                     </div>
-                    <div class="mb-3">
-                        <label for="harga" class="form-label">Harga Jual</label>
-                        <input type="number" class="form-control" id="harga" name="harga" autocomplete="off" placeholder="1.000.000" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="stock" class="form-label">Stock</label>
-                        <input type="number" class="form-control" id="stock" name="stock" autocomplete="off" placeholder="10" required>
-                    </div>
-
 
                     <div class="mb-3 text-center ">
                         <button type="submit" class="btn btn-primary px-5 ">Simpan</button>

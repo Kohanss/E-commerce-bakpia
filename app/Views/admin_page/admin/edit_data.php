@@ -13,7 +13,7 @@
         <div class="">
             <button type="button" class="float-end btn btn-danger m-1 "><a href="/admin" class="text-light pt-1" style="text-decoration: none;">&#128473;</a></button>
         </div>
-        <?php $data = $data_edit['result']['data']; ?>
+        <?php $data = $product_detail['result']['data']; ?>
         <?php //print_r($data); die; 
         ?>
         <?php foreach ($data as $key => $product) { ?>
@@ -21,34 +21,35 @@
                 <div class="col-md-12 overflow-hidden">
                     <h2 class="text-center">Edit Produk</h2>
                     <hr>
-                    <form action="<?= base_url('/admin/produk/update-data'); ?>" method="post">
+                    <form action="<?= base_url('/admin/product/update'); ?>" method="post">
+                        <input type="hidden" id="id" name="id" value="<?php echo $data[0]['id']; ?>">
                         <div class="mb-3">
                             <label for="namaProduk" class="form-label">Nama Produk</label>
                             <input type="text" class="form-control" id="namaProduk" name="namaProduk" value="<?= $product['product']; ?>" required>
                         </div>
                         <div class="mb-3">
-                            <label for="kategori" class="form-label">Kategori</label>
-                            <select class="form-select" id="kategori" name="kategori" aria-label="Default select example">
-                                <option value="<?php echo $product['category']; ?>">pilih kategori</option>
-                                <?php foreach ($data_category['result'] as $category) {  ?>
+                            <label for="category" class="form-label">Kategori</label>
+                            <select class="form-select" id="category" name="category" aria-label="Default select example">
+                                <option value="<?php echo $product['category_id']; ?>">pilih kategori</option>
+                                <?php foreach ($category['result'] as $category) {  ?>
                                     <option value="<?php echo $category['id']; ?>"><?php echo $category['category']; ?></option>
                                 <?php } ?>
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="kategori" class="form-label">Tipe</label>
-                            <select class="form-select" id="kategori" name="kategori" aria-label="Default select example">
+                            <label for="type" class="form-label">Tipe</label>
+                            <select class="form-select" id="type" name="type" aria-label="Default select example">
                                 <option value="<?php echo $product['type_id']; ?>">pilih kategori</option>
-                                <?php foreach ($data_type['result'] as $type) {  ?>
+                                <?php foreach ($type['result'] as $type) {  ?>
                                     <option value="<?php echo $type['id']; ?>"><?php echo $type['type']; ?></option>
                                 <?php } ?>
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="kategori" class="form-label">Box</label>
-                            <select class="form-select" id="kategori" name="kategori" aria-label="Default select example">
+                            <label for="value" class="form-label">Box</label>
+                            <select class="form-select" id="value" name="value" aria-label="Default select example">
                                 <option value="<?php echo $product['value_id']; ?>">pilih kategori</option>
-                                <?php foreach ($data_value['result'] as $value) {  ?>
+                                <?php foreach ($value['result'] as $value) {  ?>
                                     <option value="<?php echo $value['id']; ?>"><?php echo $value['value']; ?></option>
                                 <?php } ?>
                             </select>

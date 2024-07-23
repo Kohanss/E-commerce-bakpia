@@ -14,13 +14,23 @@ $routes->get('/toko', 'Pages::toko');
 // $routes->post('pages/search', 'Pages::search', ['post']);
 // $routes->get('/loginUser', 'Pages::loginUser');
 $routes->get('/admin', 'Admin\admin::admin');
-$routes->get('/admin/produk/edit-form', 'Admin\admin::editData');
 $routes->post('/admin/produk/update-data', 'Admin\admin::posteditdata');
-$routes->get('/admin/produk/add-data', 'Admin\admin::addData');
+// $routes->get('/admin/produk/add-data', 'Admin\admin::addData');
 $routes->get('/category', 'Admin\Dashboard::category');
 $routes->get('/unit', 'Admin\Dashboard::unit');
 $routes->get('/login', 'Admin\admin::login_page');
 $routes->post('/login', 'Admin\admin::login_post');
 $routes->post('/admin/login/success', 'Admin\admin::login_post');
 $routes->post('/eror', 'Admin\admin::login_post');
-// $routes->get('/Dashboard/posteditdata', 'Admin\Dashboard::login');
+
+// ADD DATA
+$routes->get('/admin/produk/add-data', 'Admin\admin::get_detail_add');
+$routes->post('/admin/produk/add-data', 'Admin\admin::add_product');
+
+// DELETE PRODUCT
+$routes->get('/admin/product/delete(:any)', 'Admin\admin::product_delete/$1');
+
+// UPDATE PRODUCT
+$routes->get('/admin/product/update(:any)', 'Admin\admin::get_detail_update/$1');
+$routes->post('/admin/product/update(:any)', 'Admin\admin::update_product/$1');
+
