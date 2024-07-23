@@ -18,10 +18,15 @@ $routes->post('/admin/produk/update-data', 'Admin\admin::posteditdata');
 // $routes->get('/admin/produk/add-data', 'Admin\admin::addData');
 $routes->get('/category', 'Admin\Dashboard::category');
 $routes->get('/unit', 'Admin\Dashboard::unit');
-$routes->get('/login', 'Admin\admin::login_page');
-$routes->post('/login', 'Admin\admin::login_post');
 $routes->post('/admin/login/success', 'Admin\admin::login_post');
 $routes->post('/eror', 'Admin\admin::login_post');
+
+// LOGIN SYSTEM
+$routes->get('/login', 'Admin\admin::login_page');
+$routes->post('/login', 'Admin\admin::login_post');
+
+// SEARCH DATA
+$routes->post('/admin/search', 'Admin\admin::search');
 
 // ADD DATA
 $routes->get('/admin/produk/add-data', 'Admin\admin::get_detail_add');

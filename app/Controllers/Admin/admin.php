@@ -6,135 +6,151 @@ use App\Controllers\BaseController;
 
 class admin extends BaseController
 {
-
-    public function addData(): string
+    public function admin()
     {
+
         //check token/cookie exist
         $token = $this->request->getCookie();
-        $token = $token['Token'];
-        $cookie_check = $this->check_cookie($token);
+        if (empty($token['Token'])) {
+            return redirect()->to('/login');
+        }
 
-        $curl['url'] = ['http://10.10.0.53/coba-coba-wir/public'];
-        $curl['endpoint'] = ['listpublic/listproduct'];
-        $curl['method'] = ['GET'];
-        $curl['pagination'] = ['false'];
-        $curl['max_redirect'] = 10;
-        $curl['timeout'] = [1];
-        $curl['follow_location'] = true;
-        $curl['return_transfer'] = true;
-        $data = curlSetOptGet($curl);
-        $data = json_decode($data, true);
-        // print_r($data);
-        // die;
+        if (!empty($token['Token'])) {
+            $result = $this->check_cookie($token['Token']);
+            if ($result == 200) {
+                $curl['url'] = ['http://10.10.0.53/coba-coba-wir/public'];
+                $curl['endpoint'] = ['listpublic/product'];
+                $curl['method'] = ['GET'];
+                $curl['pagination'] = ['false'];
+                $curl['max_redirect'] = 10;
+                $curl['timeout'] = [1];
+                $curl['follow_location'] = true;
+                $curl['return_transfer'] = true;
+                $data = curlSetOptGet($curl);
+                $data = json_decode($data, true);
 
-        $default = [
-            "status" => 200,
-            "message" => "List Product",
-            "error" => "",
-            "result" => [
-                [
-                    "id" => "279",
-                    "product" => "Mie Aceh",
-                    "category" => "Makanan",
-                    "unit" => "Piring",
-                    "price_sell" => "350",
-                    "stock" => "56"
-                ],
-                [
-                    "id" => "280",
-                    "product" => "Ayam Geprek",
-                    "category" => "Makanan",
-                    "unit" => "Piring",
-                    "price_sell" => "700",
-                    "stock" => "258"
-                ],
-                [
-                    "id" => "282",
-                    "product" => "Ayam Goreng",
-                    "category" => "Makanan",
-                    "unit" => "Piring",
-                    "price_sell" => "700",
-                    "stock" => "98"
-                ],
-                [
-                    "id" => "283",
-                    "product" => "Mie Rendang",
-                    "category" => "Makanan",
-                    "unit" => "Piring",
-                    "price_sell" => "300",
-                    "stock" => "498"
-                ],
-                [
-                    "id" => "284",
-                    "product" => "Mie Soto",
-                    "category" => "Makanan",
-                    "unit" => "Piring",
-                    "price_sell" => "300",
-                    "stock" => "498"
-                ],
-                [
-                    "id" => "285",
-                    "product" => "Ayam Rendang",
-                    "category" => "Makanan",
-                    "unit" => "Piring",
-                    "price_sell" => "1000",
-                    "stock" => "999"
-                ],
-                [
-                    "id" => "289",
-                    "product" => "Es Teh",
-                    "category" => "Minuman",
-                    "unit" => "Gelas",
-                    "price_sell" => "800",
-                    "stock" => "100"
-                ],
-                [
-                    "id" => "290",
-                    "product" => "Es Jeruk",
-                    "category" => "Minuman",
-                    "unit" => "Gelas",
-                    "price_sell" => "800",
-                    "stock" => "100"
-                ],
-                [
-                    "id" => "291",
-                    "product" => "Teh anget",
-                    "category" => "Minuman",
-                    "unit" => "Gelas",
-                    "price_sell" => "800",
-                    "stock" => "100"
-                ],
-                [
-                    "id" => "292",
-                    "product" => "Kelapa",
-                    "category" => "Minuman",
-                    "unit" => "Gelas",
-                    "price_sell" => "800",
-                    "stock" => "100"
-                ]
-            ]
-        ];
+                $default = [
+                    "status" => 200,
+                    "message" => "List Data Product",
+                    "error" => "",
+                    "result" => [
+                        [
+                            "product" => "Kacang Hijau",
+                            "value" => "15",
+                            "type" => "Griya Bakpia Premium",
+                            "category" => "Basah",
+                            "price" => "40000"
+                        ],
+                        [
+                            "product" => "Keju",
+                            "value" => "15",
+                            "type" => "Griya Bakpia Premium",
+                            "category" => "Basah",
+                            "price" => "40000"
+                        ],
+                        [
+                            "product" => "Coklat",
+                            "value" => "15",
+                            "type" => "Griya Bakpia Premium",
+                            "category" => "Basah",
+                            "price" => "40000"
+                        ],
+                        [
+                            "product" => "Durian",
+                            "value" => "15",
+                            "type" => "Griya Bakpia Premium",
+                            "category" => "Basah",
+                            "price" => "40000"
+                        ],
+                        [
+                            "product" => "Mix",
+                            "value" => "15",
+                            "type" => "Griya Bakpia Premium",
+                            "category" => "Basah",
+                            "price" => "42000"
+                        ],
+                        [
+                            "product" => "Kacang Hijau Originial",
+                            "value" => "20",
+                            "type" => "Bakpia 465",
+                            "category" => "Basah",
+                            "price" => "24000"
+                        ],
+                        [
+                            "product" => "Kacang Hijau Rasa Keju",
+                            "value" => "20",
+                            "type" => "Bakpia 465",
+                            "category" => "Basah",
+                            "price" => "26000"
+                        ],
+                        [
+                            "product" => "Kacang Hijau Rasa Coklat",
+                            "value" => "20",
+                            "type" => "Bakpia 465",
+                            "category" => "Basah",
+                            "price" => "26000"
+                        ],
+                        [
+                            "product" => "Telo Ungu",
+                            "value" => "15",
+                            "type" => "Bakpia 465",
+                            "category" => "Basah",
+                            "price" => "24000"
+                        ],
+                        [
+                            "product" => "Keju",
+                            "value" => "20",
+                            "type" => "Bakpia 465 Kering",
+                            "category" => "Kering",
+                            "price" => "24000"
+                        ],
+                        [
+                            "product" => "Coklat",
+                            "value" => "20",
+                            "type" => "Bakpia 465 Kering",
+                            "category" => "Kering",
+                            "price" => "24000"
+                        ],
+                        [
+                            "product" => "Aneka Rasa",
+                            "value" => "20",
+                            "type" => "Bakpia 465 Kering",
+                            "category" => "Kering",
+                            "price" => "24000"
+                        ],
+                        [
+                            "product" => "Mix Keju Coklat",
+                            "value" => "20",
+                            "type" => "Bakpia 465 Kering",
+                            "category" => "Kering",
+                            "price" => "24000"
+                        ]
+                    ]
+                ];
 
-        if (empty($data)) {
-            return view(
-                'admin_page/admin/add_data',
-                [
-                    'title' => 'Griya Bakpia | Produk',
-                    'data_get' => $default
-                ]
+                if (empty($data)) {
+                    return view(
+                        'admin_page/admin/admin',
+                        [
+                            'title' => 'Griya Bakpia | Produk',
+                            'data_get' => $default
+                        ]
 
-            );
-        } else {
-            return view(
-                'admin_page/admin/add_data',
-                [
-                    'title' => 'Griya Bakpia | Produk',
-                    'data_get' => $data
-                ]
+                    );
+                } else {
+                    return view(
+                        'admin_page/admin/admin',
+                        [
+                            'title' => 'Griya Bakpia | Produk',
+                            'data_get' => $data
+                        ]
 
-            );
+                    );
+                }
+            }
         }
     }
+
 
     public function login_page($token = null)
     {
@@ -437,25 +453,12 @@ class admin extends BaseController
 
     public function product_delete(): string
     {
+
         $id = $this->request->getGet();
         $id = $id['id'];
 
         $token = $this->request->getCookie();
         $token = $token['Token'];
-        // $curl['url'] = ['http://10.10.0.53/coba-coba-wir/public'];
-        // $curl['endpoint'] = ['admin/product/delete'];
-        // $curl['params'] = [
-        //     'id' => $id
-        // ];
-        // $curl['method'] = ['DE'];
-        // $curl['max_redirect'] = 10;
-        // $curl['timeout'] = [1];
-        // $curl['follow_location'] = true;
-        // $curl['return_transfer'] = true;
-        // $data = curlSetOptGet($curl);
-        // $data = json_decode($data, true);
-        // print_r($data);
-        // die;
 
 
         $curl = curl_init();
@@ -482,138 +485,32 @@ class admin extends BaseController
         return $this->admin();
     }
 
-
-    public function admin(): string
+    public function search()
     {
-        $curl['url'] = ['http://10.10.0.53/coba-coba-wir/public'];
-        $curl['endpoint'] = ['listpublic/product'];
-        $curl['method'] = ['GET'];
-        $curl['pagination'] = ['false'];
-        $curl['max_redirect'] = 10;
-        $curl['timeout'] = [1];
-        $curl['follow_location'] = true;
-        $curl['return_transfer'] = true;
-        $data = curlSetOptGet($curl);
-        $data = json_decode($data, true);
-        // print_r($data);
-        // die;
+        //check token/cookie exist
+        $token = $this->request->getCookie();
+        $token = $token['Token'];
+        $cookie_check = $this->check_cookie($token);
 
-        $default = [
-            "status" => 200,
-            "message" => "List Data Product",
-            "error" => "",
-            "result" => [
-                [
-                    "product" => "Kacang Hijau",
-                    "value" => "15",
-                    "type" => "Griya Bakpia Premium",
-                    "category" => "Basah",
-                    "price" => "40000"
-                ],
-                [
-                    "product" => "Keju",
-                    "value" => "15",
-                    "type" => "Griya Bakpia Premium",
-                    "category" => "Basah",
-                    "price" => "40000"
-                ],
-                [
-                    "product" => "Coklat",
-                    "value" => "15",
-                    "type" => "Griya Bakpia Premium",
-                    "category" => "Basah",
-                    "price" => "40000"
-                ],
-                [
-                    "product" => "Durian",
-                    "value" => "15",
-                    "type" => "Griya Bakpia Premium",
-                    "category" => "Basah",
-                    "price" => "40000"
-                ],
-                [
-                    "product" => "Mix",
-                    "value" => "15",
-                    "type" => "Griya Bakpia Premium",
-                    "category" => "Basah",
-                    "price" => "42000"
-                ],
-                [
-                    "product" => "Kacang Hijau Originial",
-                    "value" => "20",
-                    "type" => "Bakpia 465",
-                    "category" => "Basah",
-                    "price" => "24000"
-                ],
-                [
-                    "product" => "Kacang Hijau Rasa Keju",
-                    "value" => "20",
-                    "type" => "Bakpia 465",
-                    "category" => "Basah",
-                    "price" => "26000"
-                ],
-                [
-                    "product" => "Kacang Hijau Rasa Coklat",
-                    "value" => "20",
-                    "type" => "Bakpia 465",
-                    "category" => "Basah",
-                    "price" => "26000"
-                ],
-                [
-                    "product" => "Telo Ungu",
-                    "value" => "15",
-                    "type" => "Bakpia 465",
-                    "category" => "Basah",
-                    "price" => "24000"
-                ],
-                [
-                    "product" => "Keju",
-                    "value" => "20",
-                    "type" => "Bakpia 465 Kering",
-                    "category" => "Kering",
-                    "price" => "24000"
-                ],
-                [
-                    "product" => "Coklat",
-                    "value" => "20",
-                    "type" => "Bakpia 465 Kering",
-                    "category" => "Kering",
-                    "price" => "24000"
-                ],
-                [
-                    "product" => "Aneka Rasa",
-                    "value" => "20",
-                    "type" => "Bakpia 465 Kering",
-                    "category" => "Kering",
-                    "price" => "24000"
-                ],
-                [
-                    "product" => "Mix Keju Coklat",
-                    "value" => "20",
-                    "type" => "Bakpia 465 Kering",
-                    "category" => "Kering",
-                    "price" => "24000"
-                ]
-            ]
-        ];
+        if ($cookie_check == 200) {
+            $post = $this->request->getPost();
+            $input = $post['search'];
 
+            // get list category
+            $search['url'] = ['http://10.10.0.53/coba-coba-wir/public'];
+            $search['endpoint'] = ['listpublic/product'];
+            $search['params'] = [
+                'search' => $input
+            ];
+            $search['pagination'] = ['false'];
+            $search = curlSetOptGet($search);
+            $search = json_decode($search, true);
 
-
-        if (empty($data)) {
             return view(
                 'admin_page/admin/admin',
                 [
                     'title' => 'Griya Bakpia | Produk',
-                    'data_get' => $default
-                ]
-
-            );
-        } else {
-            return view(
-                'admin_page/admin/admin',
-                [
-                    'title' => 'Griya Bakpia | Produk',
-                    'data_get' => $data
+                    'data_get' => $search
                 ]
 
             );
